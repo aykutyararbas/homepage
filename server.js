@@ -8,9 +8,9 @@ server.set('view engine', 'ejs');
 const createProxy = (path, target) =>
   server.use(path, proxy({ target, changeOrigin: true, ignorePath: true }));
 
-createProxy('/header', 'https://microfrontends-header.herokuapp.com/');
-createProxy('/products-list', 'https://microfrontends-products-list.herokuapp.com/');
-createProxy('/cart', 'https://microfrontends-cart.herokuapp.com/');
+createProxy('/header', 'http://localhost:3000');
+createProxy('/products-list', 'http://localhost:3001');
+//createProxy('/cart', 'https://microfrontends-cart.herokuapp.com/');
 
 server.get('/', (req, res) => res.render('index'));
 
